@@ -3,19 +3,21 @@ package imperative;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import static imperative.Main.Gender.*;
 
 public class Main {
     public static void main(String[] args) {
         List<Person> people = List.of(
                 new Person("John", MALE),
-                new Person("MAria", FEMALE),
+                new Person("Maria", FEMALE),
                 new Person("Ilhan", FEMALE),
                 new Person("Sancho", MALE),
                 new Person("Joan", FEMALE)
                 );
         //Finding number of female
         //Imperative Approach
+        System.out.println("Imperative Approach");
         List<Person> females = new ArrayList<>();
 
         //Count number of females
@@ -30,6 +32,11 @@ public class Main {
             System.out.println(female);
         }
 
+        //Declarative Approach
+        System.out.println("Declarative Approach");
+        people.stream()
+                .filter(person -> FEMALE.equals(person.gender))
+                .forEach(System.out::println);
 
     }
     static class Person {
