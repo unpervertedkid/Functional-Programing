@@ -3,7 +3,6 @@
 ##Functional Interfaces
 
 - Functions 
-
  -Chaining functions with andThen 
  
  -BiFunction 
