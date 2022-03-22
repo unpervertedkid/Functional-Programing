@@ -31,6 +31,25 @@ public class _Streams {
                 .mapToInt(String::length)
                 .forEach(System.out::println);
 
+        //Check if list contains only female
+        System.out.print("List contains only Female : ");
+        boolean b = people.stream()
+                .allMatch(person -> FEMALE.equals(person.gender));
+        System.out.print(b);
+
+        //Check if list contains any female
+        System.out.print("\nList contains any Female : ");
+        boolean c = people.stream()
+                .anyMatch(person -> FEMALE.equals(person.gender));
+        System.out.print(c);
+
+        //Check if list contains no female
+        System.out.print("\nList contains no Female : ");
+        boolean d = people.stream()
+                .noneMatch(person -> FEMALE.equals(person.gender));
+        System.out.print(d);
+
+
 
     }
     //Person class
